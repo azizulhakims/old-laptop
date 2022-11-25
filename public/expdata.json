@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Hiking In the Mountains",
+    "id": 1,
+    "location": "Bandarban",
+    "image": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
+    "price": 57,
+    "host": "John Doe",
+    "rating": "64"
+  },
+  {
+    "title": "Sky Diving like never before",
+    "id": 2,
+    "location": "Dubai",
+    "image": "https://i.ibb.co/2jb4bvR/Experience3.jpg",
+    "price": 157,
+    "host": "Max Mars",
+    "rating": "43"
+  },
+  {
+    "title": "See Sunset in the beach",
+    "id": 3,
+    "location": "Kuakata",
+    "image": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
+    "price": 47,
+    "host": "John Doe",
+    "rating": "34"
+  },
+  {
+    "title": "See Sunset in the beach",
+    "id": 4,
+    "location": "Rangamati",
+    "image": "https://i.ibb.co/bB98pjR/Experience1.jpg",
+    "price": 98,
+    "host": "John Doe",
+    "rating": "97"
+  },
+  {
+    "title": "See Sunset in the beach",
+    "id": 5,
+    "location": "Rangamatis",
+    "image": "https://i.ibb.co/bB98pjR/Experience1.jpg",
+    "price": 98,
+    "host": "John Doe",
+    "rating": "97"
+  }
+]
