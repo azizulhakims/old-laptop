@@ -6,7 +6,7 @@ const Spinner = () => {
         <div>
             <InfinitySpin
                 width='100'
-                color="#FFFFFFFF"
+                color="#FFFFFFFFF"
             />
         </div>
     );

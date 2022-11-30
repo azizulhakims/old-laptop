@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { Navigate, useLocation } from "react-router-dom"
 import Spinner from "../component/Spinner/Spinner"
-import { AuthContext } from "../Firebase/firebase.config"
+import { AuthContext } from "../contexts/AuthProvider";
+
 
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext);
     const location = useLocation()
     console.log(loading);
     if (loading) {

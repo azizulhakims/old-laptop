@@ -7,7 +7,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const Registration = () => {
 
-    const { createUser, updateUserProfile, verifyEmail, loading, setLoading, signInWithGoogle, resetPassword } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, loading, setLoading, signInWithGoogle } = useContext(AuthContext);
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -19,6 +19,7 @@ const Registration = () => {
         const email = e.target.email.value
         const password = e.target.password.value
         const image = e.target.image.files[0]
+        const seller = e.target.type.value
 
         // console.log(name, email, password, image);
 
@@ -37,16 +38,15 @@ const Registration = () => {
                 console.log(data.data.display_url)
                 //createUser
                 createUser(email, password)
-                    .then(result => {
-                        setAuthToken(result.user)
-                        updateUserProfile(name, data.data.display_url)
 
+                    .then(result => {
+                        setAuthToken(result.user, seller)
+                        updateUserProfile(name, data.data.display_url, seller)
                             .then(
                                 verifyEmail()
                                     .then(() => {
                                         toast.success(
                                             'Please chq your email for verification Link'
-
                                         )
                                         navigate(from, { replace: true })
                                     })
@@ -77,6 +77,7 @@ const Registration = () => {
         })
 
     }
+
 
 
     return (
@@ -141,6 +142,25 @@ const Registration = () => {
                                     required
                                 />
                             </div>
+
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">User Type</span>
+                                </label>
+                                <select
+                                    name='type'
+                                >
+                                    <option
+                                        value='user'
+                                    >User Account</option>
+                                    <option value='seller'>Seller Account</option>
+
+                                </select>
+
+
+
+                            </div>
+
                             <div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary text-center">

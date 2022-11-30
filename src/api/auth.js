@@ -1,7 +1,14 @@
-export const setAuthToken = user => {
-    const currentUser = {
-        email: user.email,
-
+export const setAuthToken = (user, seller) => {
+    let currentUser = {};
+    if (seller) {
+        currentUser = {
+            email: user.email,
+            seller: seller === 'seller' ? true : false,
+        }
+    } else {
+        currentUser = {
+            email: user.email,
+        }
     }
 
     // save user in db & gat token
@@ -11,12 +18,11 @@ export const setAuthToken = user => {
         headers: {
             'content-type': 'application/json',
         },
-
         body: JSON.stringify(currentUser),
     }).then(res => res.json())
         .then(data => {
             console.log(data)
             //Save token
-            localStorage.setItem("oldLaptop - token", data.token)
+            localStorage.setItem("oldLaptop-token", data.token)
         })
 }
