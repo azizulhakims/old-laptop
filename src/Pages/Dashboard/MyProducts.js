@@ -1,12 +1,25 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { getMyProducts } from '../../api/Product';
+import { AuthContext } from '../../contexts/AuthProvider';
 import ConfirmationModal from '../../Share/ConfirmationModal';
 
 // import Loading from '../../../Share/Loading/Loading';
 
 const MyBookedItem = () => {
+    const { user, email } = useContext(AuthContext);
     const [deletingDoctor, setDeletingDoctor] = useState(null);
+
+    // const [product, setProduct] = useState([]);
+
+    // useEffect(() => {
+    //     getMyProducts()
+    //         .then(data => {
+    //             console.log(data);
+    //             setProduct(data)
+    //         })
+    // }, [])
 
     const closeModal = () => {
         setDeletingDoctor(null);
@@ -16,7 +29,7 @@ const MyBookedItem = () => {
         queryKey: ['addproduct'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/addproduct', {
+                const res = await fetch(`http://localhost:5000/addproduct`, {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
