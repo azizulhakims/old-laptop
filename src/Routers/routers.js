@@ -6,6 +6,9 @@ import Main from '../Layout/Main'
 import Category from '../Pages/Category'
 import SinglePage from '../Pages/Category/SinglePage'
 import AddProduct from '../Pages/Dashboard/AddProduct'
+import AllBooking from '../Pages/Dashboard/AllBooking'
+import AllBuyer from '../Pages/Dashboard/AllBuyer'
+import AllSeller from '../Pages/Dashboard/AllSeller'
 import BecomeASeller from '../Pages/Dashboard/BecomeASeller'
 import MyBooking from '../Pages/Dashboard/MyBooking'
 // import MyBookedItem from '../Pages/Dashboard/MyBookedItem'
@@ -107,6 +110,21 @@ const router = createBrowserRouter([
                 path: 'my-products',
                 element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
             },
+
+            {
+                path: 'all-booking',
+                element: <PrivateRoute><AllBooking></AllBooking></PrivateRoute>
+            },
+            {
+                path: 'all-buyer',
+                element: <PrivateRoute><AllBuyer></AllBuyer></PrivateRoute>
+            },
+
+            {
+                path: 'all-seller',
+                element: <PrivateRoute><AllSeller></AllSeller></PrivateRoute>
+            }
+
 
         ]
     },
