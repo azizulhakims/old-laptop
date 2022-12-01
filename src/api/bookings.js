@@ -23,7 +23,9 @@ export const getAllBooked = async email => {
     return data
 }
 
-
+// filterSellerBuyer = data.filter(item => !item.admin)
+// filterSeller = data.filter(item => item.seller && !item.admin)
+// filterBuyer = data.filter(item => !item.seller && !admin)
 //admin data gate
 export const getAllBookedAdmin = async () => {
     const url = `${process.env.REACT_APP_API_URL}/productbook`
@@ -34,4 +36,5 @@ export const getAllBookedAdmin = async () => {
 
     return data
 }
+
 
