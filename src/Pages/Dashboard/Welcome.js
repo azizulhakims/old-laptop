@@ -14,17 +14,9 @@ const Welcome = () => {
 
             </div>
             <div className='flex justify-center text-gray-300 items-center mt-4'>
-                {/* {user && user.role ? (
-                    <>
-                        {user.role === 'admin' ? (
-                            <p className='text-3xl font-medium'>Admin Dashboard</p>
-                        ) : (
-                            <p className='text-3xl font-medium'>Host Dashboard</p>
-                        )}{' '}
-                    </>
-                ) : ( */}
-                <p className='text-3xl font-medium'>User Dashboard</p>
-                {/* )} */}
+
+                <p className='text-3xl font-medium'> Dashboard</p>
+
             </div>
         </div>
     );

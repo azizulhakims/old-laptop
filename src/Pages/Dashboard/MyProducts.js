@@ -9,7 +9,7 @@ import ConfirmationModal from '../../Share/ConfirmationModal';
 
 const MyBookedItem = () => {
     const { user, email } = useContext(AuthContext);
-    const [deletingDoctor, setDeletingDoctor] = useState(null);
+    const [product, setProduct] = useState(null);
 
     // const [product, setProduct] = useState([]);
 
@@ -22,7 +22,7 @@ const MyBookedItem = () => {
     // }, [])
 
     const closeModal = () => {
-        setDeletingDoctor(null);
+        setProduct(null);
     }
 
     const { data: addproduct, isLoading, refetch } = useQuery({
@@ -91,19 +91,19 @@ const MyBookedItem = () => {
                                 <td>{addproduct.price}</td>
                                 <td>{addproduct.location}</td>
                                 <td>
-                                    <label onClick={() => setDeletingDoctor(addproduct)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
+                                    <label onClick={() => setProduct(addproduct)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
                                 </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
-            {deletingDoctor && <ConfirmationModal
+            {product && <ConfirmationModal
                 title={`Are you sure you want to delete?`}
-                message={`If you delete ${deletingDoctor.name} It cannot be undone.`}
+                message={`If you delete ${product.name} It cannot be undone.`}
                 successAction={handleDeleteDoctor}
                 successButtonName='Delete'
-                modalData={deletingDoctor}
+                modalData={product}
                 closeModal={closeModal}
             ></ConfirmationModal>
 

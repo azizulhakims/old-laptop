@@ -39,7 +39,7 @@ const Home = () => {
                         <p>See All</p>
                     </Link>
                 </div>
-                <div className='flex justify-center px-4'>
+                {/* <div className='flex justify-center px-4'>
                     <div className='container pb-8 pt-2 mx-auto'>
                         <div className='flex flex-wrap'>
                             {[...Array(3)].map((pro, i) => (
@@ -50,7 +50,7 @@ const Home = () => {
                         </div>
 
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className='flex justify-between px-4'>
                 <p className='text-xl font-bold'>Products</p>

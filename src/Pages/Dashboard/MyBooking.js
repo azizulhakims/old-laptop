@@ -4,10 +4,10 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const MyBooking = () => {
     const { user } = useContext(AuthContext);
-    const [deletingDoctor, setDeletingDoctor] = useState(null);
+    const [product, setProduct] = useState(null);
 
     const closeModal = () => {
-        setDeletingDoctor(null);
+        setProduct(null);
     }
 
     const { data: myBookedItem, isLoading, refetch } = useQuery({
@@ -52,19 +52,19 @@ const MyBooking = () => {
                                 <td>{myBookedItem.price}</td>
                                 <td>{myBookedItem.meeting}</td>
                                 <td>
-                                    <label onClick={() => setDeletingDoctor(myBookedItem)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
+                                    <label onClick={() => setProduct(myBookedItem)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
                                 </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
-            {/* {deletingDoctor && <ConfirmationModal
+            {/* { && <ConfirmationModal
             title={`Are you sure you want to delete?`}
-            message={`If you delete ${deletingDoctor.name} It cannot be undone.`}
+            message={`If you delete ${.name} It cannot be undone.`}
             successAction={handleDeleteDoctor}
             successButtonName='Delete'
-            modalData={deletingDoctor}
+            modalData={}
             closeModal={closeModal}
         ></ConfirmationModal>
 

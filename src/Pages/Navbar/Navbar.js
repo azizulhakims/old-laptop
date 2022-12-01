@@ -19,7 +19,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl" to='/'>
-                    daisyUI
+                    UseLaptop
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
