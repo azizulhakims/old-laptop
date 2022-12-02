@@ -2,7 +2,7 @@ import { getValue } from '@testing-library/user-event/dist/utils';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 
@@ -29,10 +29,7 @@ const ProductCard = ({ data }) => {
             pnumber: formData?.pnumber,
             name: data?.name,
             email: user?.email
-
         }
-
-
         console.log(newData);
         fetch('http://localhost:5000/productbook', {
             method: 'POST',
@@ -40,24 +37,16 @@ const ProductCard = ({ data }) => {
             headers: {
                 // authorization: `bearer ${localStorage.getItem('accessToken')}`
                 'content-type': 'application/json',
-
             },
             body: JSON.stringify(newData)
-
         })
-
-
             .then(res => res.json())
             .then(result => {
                 console.log(result);
 
                 toast.success(`${data.name} is Booked successfully`)
                 Navigate('/')
-
-
             })
-
-
     }
     return (
         <>
@@ -71,7 +60,7 @@ const ProductCard = ({ data }) => {
                         </h2>
                         <p>{data.description}</p>
                         <div>
-                            <p>Original Price{ }</p>
+                            <p>Original Price: {data.purchasePrices}/-</p>
                         </div>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Location: {data.location}</div>
@@ -81,6 +70,7 @@ const ProductCard = ({ data }) => {
                         <div>
                             <label htmlFor="my-modal-3" className="btn">Click Hear for Book</label>
                         </div>
+                        <div><button className='btn'><Link to='/category'>Back Category Page</Link></button></div>
                     </div>
 
 
