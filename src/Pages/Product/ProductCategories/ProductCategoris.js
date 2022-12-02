@@ -16,7 +16,7 @@ const ProductCategoris = ({ pro }) => {
                                 {pro.title}
 
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <p>Best Laptop Seller</p>
 
                             <Link to={`/category/${pro._id}`}><button className='btn'>See Product</button></Link>
                             <div className="card-actions justify-end">
