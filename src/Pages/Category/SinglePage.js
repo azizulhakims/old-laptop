@@ -19,13 +19,16 @@ const SinglePage = () => {
 
 
     return (
-        <div className='container pb-8 pt-2 mx-auto mt-6 mb-12'>
-            <h2 className='font-bold'>Products</h2>
+        <div>
+             <h2 className='font-bold m-4 p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>Products</h2>
+        <div className=''>
+           
 
-            <div className='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>{filterData.map(item => <ProductCard
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 p-4 m-4'>{filterData.map(item => <ProductCard
                 key={item._id}
                 data={item}
             ></ProductCard>)}</div>
+        </div>
         </div>
     );
 };

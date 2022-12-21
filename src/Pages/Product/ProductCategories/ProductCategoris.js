@@ -8,9 +8,9 @@ const ProductCategoris = ({ pro }) => {
 
             <div>
                 <div></div>
-                <div className='md:flex justify-center gap-10 px-6 md:px-10 lg:px-20'>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src={pro.image} alt="Shoes" /></figure>
+                <div className=' justify-center  p-3 '>
+                    <div className="card w-98 h-50 bg-base-100 shadow-xl">
+                        <figure><img className='w-70 h-40 p-4' src={pro.image} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
                                 {pro.title}

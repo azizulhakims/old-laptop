@@ -15,8 +15,8 @@ const Category = () => {
         <div>
             <h1 className='text-center mb-5 text-bold text-2xl'>Laptop Category</h1>
             <div className=''>
-                <div className='container pb-8 pt-2 mx-auto'>
-                    <div className='grid grid-cols-3'>
+                <div className='container pb-8 pt-2 mx-auto mt-4'>
+                    <div className='grid grid-cols-1 mb:grid-cols-2 lg:grid-cols-3 p-4'>
                         {products.map((pro, i) => (
                             <ProductCategoris
                                 key={i} pro={pro}
