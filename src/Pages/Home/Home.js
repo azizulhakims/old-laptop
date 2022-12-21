@@ -13,7 +13,7 @@ const Home = () => {
 
     const { data: products = [] } = useQuery({
         queryKey: ['products'],
-        queryFn: () => fetch('http://localhost:5000/oldLaptopCategory')
+        queryFn: () => fetch('https://nodejs-express-lemon.vercel.app/oldLaptopCategory')
             .then(res => res.json())
     })
 
@@ -60,8 +60,8 @@ const Home = () => {
             </div>
             <div className='flex justify-center px-4'>
                 <div className='container pb-8 pt-2 mx-auto'>
-                    <div className='flex flex-wrap'>
-                        {products.slice(0, 2).map((pro, i) => (
+                    <div className='grid grid-cols-1 mb:grid-cols-2 lg:grid-cols-3 gap-1 m-4'>
+                        {products.slice(0, 3).map((pro, i) => (
                             <ProductCategoris
                                 key={i} pro={pro}
                             ></ProductCategoris>

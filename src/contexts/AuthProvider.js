@@ -72,8 +72,8 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
 
         axios.all([
-            axios.get('http://localhost:5000/oldLaptopCategory'),
-            axios.get(`http://localhost:5000/user/${user?.email}`)
+            axios.get('https://nodejs-express-lemon.vercel.app/oldLaptopCategory'),
+            axios.get(`https://nodejs-express-lemon.vercel.app/user/${user?.email}`)
         ]).then(axios.spread((res1, res2) => {
             setCategory(res1.data);
             setMongoUser(res2.data)

@@ -7,7 +7,7 @@ const SinglePage = () => {
     const { id } = useParams();
     const { data: products = [] } = useQuery({
         queryKey: ['products'],
-        queryFn: () => fetch('http://localhost:5000/addproduct')
+        queryFn: () => fetch('https://nodejs-express-lemon.vercel.app/addproduct')
             .then(res => res.json())
     })
 

@@ -29,7 +29,7 @@ const MyBookedItem = () => {
         queryKey: ['addproduct'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/addproduct`, {
+                const res = await fetch(`https://nodejs-express-lemon.vercel.app/addproduct`, {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -43,7 +43,7 @@ const MyBookedItem = () => {
     })
 
     const handleDeleteDoctor = addproduct => {
-        fetch(`http://localhost:5000/addproduct/${addproduct._id}`, {
+        fetch(`https://nodejs-express-lemon.vercel.app/addproduct/${addproduct._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

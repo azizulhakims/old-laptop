@@ -14,7 +14,7 @@ const MyBooking = () => {
         queryKey: ['myBookedItem'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/productbook?email=${user?.email}`, {
+                const res = await fetch(`https://nodejs-express-lemon.vercel.app/productbook?email=${user?.email}`, {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }

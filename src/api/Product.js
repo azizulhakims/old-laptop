@@ -1,5 +1,5 @@
 export const getMyProducts = async email => {
-    const url = `${process.env.REACT_APP_API_URL}/addproduct?email=${email}`
+    const url = `https://nodejs-express-lemon.vercel.app/addproduct?email=${email}`
 
     const response = await fetch(url)
 

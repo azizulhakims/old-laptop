@@ -13,7 +13,7 @@ export const setAuthToken = (user, seller) => {
 
     // save user in db & gat token
 
-    fetch(`${process.env.REACT_APP_API_URL}/user/${user?.email}`, {
+    fetch(`https://nodejs-express-lemon.vercel.app/user/${user?.email}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',

@@ -1,6 +1,6 @@
 
 export const getAllBuyer = async seller => {
-    const url = `${process.env.REACT_APP_API_URL}/oldlaptopuser`
+    const url = `https://nodejs-express-lemon.vercel.app/oldlaptopuser`
 
     const response = await fetch(url)
 
@@ -16,7 +16,7 @@ export const getAllBuyer = async seller => {
 //admin data gate
 
 export const getAllSeller = async seller => {
-    const url = `${process.env.REACT_APP_API_URL}/oldlaptopuser`
+    const url = `https://nodejs-express-lemon.vercel.app/oldlaptopuser`
 
     const response = await fetch(url)
 

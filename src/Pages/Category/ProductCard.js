@@ -31,7 +31,7 @@ const ProductCard = ({ data }) => {
             email: user?.email
         }
         console.log(newData);
-        fetch('http://localhost:5000/productbook', {
+        fetch('https://nodejs-express-lemon.vercel.app/productbook', {
             method: 'POST',
 
             headers: {
@@ -60,7 +60,7 @@ const ProductCard = ({ data }) => {
                         </h2>
                         <p>{data.description}</p>
                         <div>
-                            <p>Original Price: {data.purchasePrices}/-</p>
+                            <p>Original Price: {data.purchasePrices}</p>
                         </div>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Location: {data.location}</div>

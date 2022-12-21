@@ -59,7 +59,7 @@ const AddProduct = () => {
                     }
 
                     //save information to the database
-                    fetch('http://localhost:5000/addproduct', {
+                    fetch('https://nodejs-express-lemon.vercel.app/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
